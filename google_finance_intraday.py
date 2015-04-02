@@ -1,7 +1,6 @@
-#!/usr/bin/env python                                                                                                     
-
-"""                                                                                                                       
-Retrieve intraday stock data from Google Finance.                                                                         
+#!/usr/bin/env python 
+"""
+Retrieve intraday stock data from Google Finance.
 """
 
 import csv
@@ -12,24 +11,24 @@ import pandas as pd
 import requests
 
 def get_google_finance_intraday(ticker, period=60, days=1):
-    """                                                                                                                   
-    Retrieve intraday stock data from Google Finance.                                                                     
-                                                                                                                          
-    Parameters                                                                                                            
-    ----------                                                                                                            
-    ticker : str                                                                                                          
-        Company ticker symbol.                                                                                            
-    period : int                                                                                                          
-        Interval between stock values in seconds.                                                                         
-    days : int                                                                                                            
-        Number of days of data to retrieve.                                                                               
-                                                                                                                          
-    Returns                                                                                                               
-    -------                                                                                                               
-    df : pandas.DataFrame                                                                                                 
-        DataFrame containing the opening price, high price, low price,                                                    
-        closing price, and volume. The index contains the times associated with                                           
-        the retrieved price values.                                                                                       
+    """
+    Retrieve intraday stock data from Google Finance.
+
+    Parameters
+    ----------
+    ticker : str
+        Company ticker symbol.
+    period : int
+        Interval between stock values in seconds.
+    days : int
+        Number of days of data to retrieve.
+
+    Returns
+    -------
+    df : pandas.DataFrame
+        DataFrame containing the opening price, high price, low price,
+        closing price, and volume. The index contains the times associated with
+        the retrieved price values.
     """
 
     uri = 'http://www.google.com/finance/getprices' \
