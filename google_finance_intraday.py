@@ -48,5 +48,8 @@ def get_google_finance_intraday(ticker, period=60, days=1):
             else:
                 times.append(start+datetime.timedelta(seconds=period*int(row[0])))
             rows.append(map(float, row[1:]))
-    return pd.DataFrame(rows, index=pd.DatetimeIndex(times, name='Date'),
-                        columns=columns)
+    if len(rows):
+        return pd.DataFrame(rows, index=pd.DatetimeIndex(times, name='Date'),
+                            columns=columns)
+    else:
+        return pd.DataFrame(rows, index=pd.DatetimeIndex(times, name='Date'))
